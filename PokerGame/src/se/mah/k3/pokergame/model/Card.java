@@ -36,7 +36,7 @@ public class Card implements Comparable<Card>{
 			return cardBack;
 		}
 	}
-	public String getSpecialName() {
+	public SpecialNames getSpecialName() {
 		return specialName;
 	}
 	
