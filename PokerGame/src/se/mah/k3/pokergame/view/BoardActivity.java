@@ -38,9 +38,9 @@ public class BoardActivity extends Activity implements OnClickListener{
 		return true;
 	}
 
+	
 	@Override
 	public void onClick(View v) {
-		
 		Log.i("k3larra", "Clicked: "+ v.getId());
 		ImageView iv = (ImageView)v;
 		iv.setPadding(0, 0, 2, 2);
