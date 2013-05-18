@@ -9,8 +9,8 @@ public class Card implements Comparable<Card>{
 	private boolean faceUp=true;
 	
 	//Enums som tillhör kort så de kan vara i denna klassen
-	public static enum Suits {SPADE,HEART,DIMOND,CLUB} ;
-	public static enum SpecialNames {ACE,JACK,QUEEN,KING,JOKER,NONE};
+	public static enum Suits {CLUB,DIAMOND,HEART,SPADE} ;
+	public static enum SpecialNames {NONE,JACK,QUEEN,KING,ACE,JOKER};
 	
 	public Card(int rank, Suits suit, int cardFace,int cardBack, SpecialNames specialName ){
 		//Instantiate local variables
@@ -56,15 +56,73 @@ public class Card implements Comparable<Card>{
 		return faceUp;
 	}
 	
+	public String getSuit(){
+		//Använder en switch här för det är lättast if funkar lika bra emn lite omständligare
+		String s="";
+		switch(suit){
+			case SPADE: {
+				s="Spader"; //Skall vara språk här om hämtat från Strings
+				break;
+			}
+			case DIAMOND:{
+				s="Ruter";
+				break;
+			}
+			case HEART:{
+				s="Hjärter";
+				break;
+			}
+			case CLUB:{
+				s="Klöver";
+				break;
+			}
+		}
+		return s;
+	}
+	/**Method tom compare Suit returns a value for each rank Spade 4, Hearts 3, Diamond 2, Club 1*/
+	public int getSuitValue(){
+		int i=0;
+		switch(suit){
+			case CLUB: {
+				i=1; //Skall vara språk här om hämtat från Strings
+				break;
+			}
+			case DIAMOND:{
+				i=2;
+				break;
+			}
+			case HEART:{
+				i=3;
+				break;
+			}
+			case SPADE:{
+				i=4;
+				break;
+			}
+		}
+		return i;
+	}
+	
+	//Denna metoden är magiken när man sorterar med Collections.sort
 	@Override
 	public int compareTo(Card another) {
-		// TODO Auto-generated method stub
-		return 0;
+		// När man sorterar används denna metoden korten jämförs blir det minustal är det här
+		int i=0;
+		//kortet mindre värt än det man jämför med, sen används detta av Collections.sort( se Card Deck
+		if (suit == another.suit){
+			i = rank - another.rank; //Blir minus om de andra kortet är större
+		}else if (suit != another.suit){
+			i = getSuitValue() - another.getSuitValue(); //Blir minus om de andra kortet är större
+		}
+		return i;
 	}
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "Debug info";
+		return "This card is a " +suit +" "+rank;
 	}
+	
+	
+	  
 	
 }
