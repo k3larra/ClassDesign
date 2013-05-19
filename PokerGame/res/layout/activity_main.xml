@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#00FF00"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -9,8 +10,125 @@
     tools:context=".BoardActivity" >
 
     <TextView
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:text="Idioten Patiens" />
+
+    <GridLayout
+        android:id="@+id/gridLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:columnCount="4"
+        android:rowCount="1" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_column="0"
+            android:layout_gravity="left|top"
+            android:layout_row="0"
+            android:src="@drawable/k12" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_column="1"
+            android:layout_gravity="left|top"
+            android:layout_row="0"
+            android:src="@drawable/h10" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_column="2"
+            android:layout_gravity="left|top"
+            android:layout_row="0"
+            android:src="@drawable/r4" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_height="wrap_content"
+            android:layout_column="3"
+            android:layout_gravity="left|top"
+            android:layout_row="0"
+            android:src="@drawable/s9" />
+    </GridLayout>
+
+    <EditText
+        android:id="@+id/to"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/move"
+        android:layout_alignRight="@+id/removeCard"
+        android:layout_toRightOf="@+id/move"
+        android:ems="10"
+        android:inputType="number"
+        android:text="1" />
+
+    <Button
+        android:id="@+id/newCards"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp"
+        android:onClick="newCardsClick"
+        android:text="4 new cards" />
+
+    <EditText
+        android:id="@+id/from"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/newCards"
+        android:layout_alignLeft="@+id/newCards"
+        android:layout_marginBottom="22dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="1" />
+
+    <Button
+        android:id="@+id/move"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/from"
+        android:layout_toRightOf="@+id/newCards"
+        android:onClick="moveClick"
+        android:text="Move" />
+
+    <EditText
+        android:id="@+id/remove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/removeCard"
+        android:layout_alignBottom="@+id/removeCard"
+        android:layout_toLeftOf="@+id/move"
+        android:ems="10"
+        android:inputType="number"
+        android:text="1" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/newGame"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/newCards"
+        android:layout_alignRight="@+id/gridLayout1"
+        android:layout_toRightOf="@+id/move"
+        android:onClick="newGameClick"
+        android:text="New Game" />
+
+    <Button
+        android:id="@+id/removeCard"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/gridLayout1"
+        android:layout_centerVertical="true"
+        android:onClick="removeClick"
+        android:text="Remove this card" />
 
 </RelativeLayout>

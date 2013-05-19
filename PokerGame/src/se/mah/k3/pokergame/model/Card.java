@@ -119,7 +119,7 @@ public class Card implements Comparable<Card>{
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "This card is a " +suit +" "+rank;
+		return suit +":"+rank;
 	}
 	
 	

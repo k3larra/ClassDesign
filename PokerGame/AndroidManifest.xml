@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="se.mah.k3.pokergame.TestActivity"
+            android:name="se.mah.k3.pokergametest.TestActivity"
             android:label="@string/title_activity_test" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,6 +1,7 @@
 package se.mah.k3.pokergame.view;
 
 import se.mah.k3.pokergame.R;
+import se.mah.k3.pokergame.controller.Controller;
 import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
@@ -12,23 +13,16 @@ import android.widget.GridLayout.LayoutParams;
 import android.widget.ImageView;
 
 public class BoardActivity extends Activity implements OnClickListener{
-
+    Controller controller;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.gridlay);
+		setContentView(R.layout.activity_main);
 		findViewById(R.id.imageView1).setOnClickListener(this);
 		findViewById(R.id.imageView2).setOnClickListener(this);
 		findViewById(R.id.imageView3).setOnClickListener(this);
 		findViewById(R.id.imageView4).setOnClickListener(this);
-		findViewById(R.id.imageView5).setOnClickListener(this);
-		findViewById(R.id.imageView6).setOnClickListener(this);
-		findViewById(R.id.imageView7).setOnClickListener(this);
-		findViewById(R.id.imageView8).setOnClickListener(this);
-		findViewById(R.id.imageView9).setOnClickListener(this);
-		findViewById(R.id.imageView10).setOnClickListener(this);
-		findViewById(R.id.imageView11).setOnClickListener(this);
-		findViewById(R.id.imageView12).setOnClickListener(this);
+		controller = new Controller();
 	}
 
 	@Override
@@ -46,4 +40,37 @@ public class BoardActivity extends Activity implements OnClickListener{
 		iv.setPadding(0, 0, 2, 2);
 	}
 
+	public void newGameClick(View v){
+		controller.startNewGame();
+		updateAll();
+	}
+	
+	public void removeClick(View v){
+		
+	}
+	
+    public void moveClick(View v){
+		
+	}
+    
+    public void newCardsClick(View v){
+    	updateAll();
+   	}
+    
+    private void updateAll(){
+    	ImageView i1 = (ImageView) findViewById(R.id.imageView1);
+    	ImageView i2 = (ImageView) findViewById(R.id.imageView2);
+    	ImageView i3 = (ImageView) findViewById(R.id.imageView3);
+    	ImageView i4 = (ImageView) findViewById(R.id.imageView4);
+    	i1.setImageResource(controller.getFirstRow().get(0).getCardFace());
+    	i2.setImageResource(controller.getSecondRow().get(0).getCardFace());
+    	i3.setImageResource(controller.getThirdRow().get(0).getCardFace());
+    	i4.setImageResource(controller.getFourthRow().get(0).getCardFace());
+    }
+    
+	
+	
+	
+	
+	
 }

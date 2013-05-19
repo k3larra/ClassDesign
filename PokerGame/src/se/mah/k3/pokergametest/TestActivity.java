@@ -1,6 +1,7 @@
-package se.mah.k3.pokergame;
+package se.mah.k3.pokergametest;
 
-import se.mah.k3.pokergame.model.PlayingDeck;
+import se.mah.k3.pokergame.R;
+import se.mah.k3.pokergame.model.Deck;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
@@ -8,12 +9,12 @@ import android.view.View;
 import android.widget.TextView;
 
 public class TestActivity extends Activity {
-	private PlayingDeck pd;
+	private Deck pd;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_test);
-		 pd = new PlayingDeck();
+		 pd = new Deck();
 		TextView tv = (TextView) findViewById(R.id.TestText);
 		tv.setText(pd.toString());
 	}

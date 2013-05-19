@@ -3,26 +3,31 @@ package se.mah.k3.pokergame.model;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 import se.mah.k3.pokergame.R;
 
-public class PlayingDeck {	
+public class Deck {	
 	private List<Card> deck = new ArrayList<Card>();  
     private static int NBR_OF_CARDS=52;
 	
-	
-	public PlayingDeck()  
+	public Deck()  
     {  
 		createCards();//Lägger det i en metod sist för det ser så fult ut i konstruktorn
     }  
       
-   
-
 	public List<Card> deal(int nbrCards){
     	//Remove nbrCards random from the deck
     	return new ArrayList<Card>();
     }
       
+	/**Returns a random card from the deck*/
+	public Card getRandomCard(){
+		Random r = new Random();
+		int i = r.nextInt(deck.size());
+		return(deck.remove(i));
+	}
+	
     public int cardsLeftinDeck()  
     {  
     	return deck.size();
@@ -90,7 +95,7 @@ public class PlayingDeck {
         deck.add(new Card(11,Card.Suits.HEART,R.drawable.h11,R.drawable.backblueport,Card.SpecialNames.JACK));
         deck.add(new Card(12,Card.Suits.HEART,R.drawable.h12,R.drawable.backblueport,Card.SpecialNames.QUEEN));
         deck.add(new Card(13,Card.Suits.HEART,R.drawable.h13,R.drawable.backblueport,Card.SpecialNames.KING));
-      //Hearts
+      //Spade
         deck.add(new Card(1,Card.Suits.SPADE,R.drawable.s1,R.drawable.backblueport,Card.SpecialNames.ACE));
         deck.add(new Card(2,Card.Suits.SPADE,R.drawable.s2,R.drawable.backblueport,Card.SpecialNames.NONE));
         deck.add(new Card(3,Card.Suits.SPADE,R.drawable.s3,R.drawable.backblueport,Card.SpecialNames.NONE));
