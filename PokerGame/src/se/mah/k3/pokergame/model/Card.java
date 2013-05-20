@@ -29,6 +29,7 @@ public class Card implements Comparable<Card>{
 		return cardBack;
 	}
 	
+	/**returns the face or the back depending of the card is turned or not*/ 
 	public int getCardImage(){
 		if (faceUp){
 			return cardFace;
@@ -36,6 +37,7 @@ public class Card implements Comparable<Card>{
 			return cardBack;
 		}
 	}
+
 	public SpecialNames getSpecialName() {
 		return specialName;
 	}
@@ -56,31 +58,29 @@ public class Card implements Comparable<Card>{
 		return faceUp;
 	}
 	
-	public String getSuit(){
-		//Använder en switch här för det är lättast if funkar lika bra emn lite omständligare
-		String s="";
-		switch(suit){
-			case SPADE: {
-				s="Spader"; //Skall vara språk här om hämtat från Strings
-				break;
-			}
-			case DIAMOND:{
-				s="Ruter";
-				break;
-			}
-			case HEART:{
-				s="Hjärter";
-				break;
-			}
-			case CLUB:{
-				s="Klöver";
-				break;
-			}
+	
+	//Denna metoden är magiken när man sorterar med Collections.sort
+	@Override
+	public int compareTo(Card another) {
+		// När man sorterar används denna metoden. Korten jämförs blir det minustal är det här
+		//kortet mindre värt än det man jämför med (another), sen används detta av Collections.sort( se Card Deck)
+		int i=0;
+		if (suit == another.suit){
+			i = rank - another.rank; //Blir minus om de andra kortet är större
+		}else if (suit != another.suit){
+			i = getSuitValue() - another.getSuitValue(); //Blir minus om de andra kortet är större
 		}
-		return s;
+		return i;
 	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return suit +":"+rank;
+	}
+	
 	/**Method tom compare Suit returns a value for each rank Spade 4, Hearts 3, Diamond 2, Club 1*/
-	public int getSuitValue(){
+	private int getSuitValue(){
 		int i=0;
 		switch(suit){
 			case CLUB: {
@@ -102,27 +102,6 @@ public class Card implements Comparable<Card>{
 		}
 		return i;
 	}
-	
-	//Denna metoden är magiken när man sorterar med Collections.sort
-	@Override
-	public int compareTo(Card another) {
-		// När man sorterar används denna metoden korten jämförs blir det minustal är det här
-		int i=0;
-		//kortet mindre värt än det man jämför med, sen används detta av Collections.sort( se Card Deck
-		if (suit == another.suit){
-			i = rank - another.rank; //Blir minus om de andra kortet är större
-		}else if (suit != another.suit){
-			i = getSuitValue() - another.getSuitValue(); //Blir minus om de andra kortet är större
-		}
-		return i;
-	}
-	@Override
-	public String toString() {
-		// TODO Auto-generated method stub
-		return suit +":"+rank;
-	}
-	
-	
 	  
 	
 }

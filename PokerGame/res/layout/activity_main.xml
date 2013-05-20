@@ -55,7 +55,7 @@
     </GridLayout>
 
     <EditText
-        android:id="@+id/to"
+        android:id="@+id/toEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/move"
@@ -76,7 +76,7 @@
         android:text="4 new cards" />
 
     <EditText
-        android:id="@+id/from"
+        android:id="@+id/fromEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/newCards"
@@ -91,13 +91,13 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/from"
+        android:layout_alignBottom="@+id/fromEditText"
         android:layout_toRightOf="@+id/newCards"
         android:onClick="moveClick"
         android:text="Move" />
 
     <EditText
-        android:id="@+id/remove"
+        android:id="@+id/removeEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/removeCard"
@@ -106,7 +106,6 @@
         android:ems="10"
         android:inputType="number"
         android:text="1" >
-
         <requestFocus />
     </EditText>
 

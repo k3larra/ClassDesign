@@ -19,7 +19,11 @@ public class Controller {
 	private Deck deck;
 	private Rules rules;
 	private Board board;
-	public Controller() {
+	
+	/**Controller for the game
+	 * call the methods you need and update rows
+	 */
+    public Controller() {
 		deck = new Deck();
 		rules = new Rules();
 		board = new Board();
@@ -32,22 +36,26 @@ public class Controller {
 		//create empty board
 	}
 	
-	/**Stub returns true every time*/
+	/**Tries to remove a card from a row
+	 * Stub returns true every time*/
 	public boolean removeCard(Board.Row rowNumber){
 		//Check if a card in any other row is bigger
 		//if true remove the card
+		
 		return true; //if done
 	}
 	
-	/**Stub returns true every time*/
+	/**Deliver four new cards checks first if deck is empty
+	 * Stub returns true every time*/
 	public boolean newCards(){
 		//check more cards in deck 
-		//deliver cards on rows
+		//deliver cards on rows 
 		return true; //if succecssfull
 	}
 	
 	/**Stub returns true every time*/
 	public boolean moveCard(Board.Row fromRow, Board.Row toRow){
+		//Check so row is not null
 		//Check if toRow is empty
 		//check if fromRow has card
 		//move the card

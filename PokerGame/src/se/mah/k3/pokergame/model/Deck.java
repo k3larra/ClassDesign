@@ -16,7 +16,8 @@ public class Deck {
 		createCards();//Lägger det i en metod sist för det ser så fult ut i konstruktorn
     }  
       
-	public List<Card> deal(int nbrCards){
+	/**picks nbrCards from the deck*/ 
+    public List<Card> deal(int nbrCards){
     	//Remove nbrCards random from the deck
     	return new ArrayList<Card>();
     }
@@ -28,7 +29,7 @@ public class Deck {
 		return(deck.remove(i));
 	}
 	
-    public int cardsLeftinDeck()  
+    public int nbrCardsLeftinDeck()  
     {  
     	return deck.size();
     }  

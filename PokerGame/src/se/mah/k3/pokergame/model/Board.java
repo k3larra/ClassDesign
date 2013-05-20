@@ -24,10 +24,24 @@ public class Board {
 		return true;
 	}
 	
+	public void addCardsToRows(Card row1,Card row2,Card row3, Card row4){
 	
+	}
 	
+	public ArrayList<Card> getRow1(){
+		return null;
+	}
 	
+	public ArrayList<Card> getRow2(){
+		return null;
+	}
 	
+	public ArrayList<Card> getRow3(){
+		return null;
+	}
 	
+	public ArrayList<Card> getRow4(){
+		return null;
+	}
 
 }
