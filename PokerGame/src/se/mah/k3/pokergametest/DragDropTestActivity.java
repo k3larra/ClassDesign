@@ -13,16 +13,50 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.view.Menu;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.Animation.AnimationListener;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 public class DragDropTestActivity extends Activity {
 
+	Animation anim1;
+	ImageView iv;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_drag_drop_test);
 	}
 
+	public void animateMe(View v){
+		iv = (ImageView) findViewById(R.id.imageView1);
+		Animation anim = AnimationUtils.loadAnimation(this, R.anim.set_animation);
+		anim1 = AnimationUtils.loadAnimation(this, R.anim.my_translate);
+		///llll
+		iv.startAnimation(anim);
+		anim.setAnimationListener(new AnimationListener() {
+			
+			@Override
+			public void onAnimationStart(Animation animation) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void onAnimationRepeat(Animation animation) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void onAnimationEnd(Animation animation) {
+				// TODO Auto-generated method stub
+				iv.startAnimation(anim1);
+			}
+		});
+		
+		
+	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

@@ -99,7 +99,6 @@ public class BoardActivity extends Activity implements OnClickListener{
     	i4.setImageResource(controller.getFourthRow().get(0).getCardFace());
     }
     
-	
 	private Row translateIntToRow(int rowNumber){
 		Row returnRow=null;
 		switch(rowNumber){

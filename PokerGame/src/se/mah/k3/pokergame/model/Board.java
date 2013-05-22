@@ -13,13 +13,13 @@ public class Board {
 	private Rules rules;
 	//Enums som tillhör board så de kan vara i denna klassen
     public static enum Row {FIRST,SECOND,THIRD,FOURTH};
-	
+
     public Board() {
 		// TODO Auto-generated constructor stub
     	rules = new Rules();
 	}
 	
-    /**Try to remove card from rownumber tru if possible*/
+    /**Try to remove card from rownumber true if possible*/
 	public boolean removeCard(Row rowNumber){
 		return true;
 	}
