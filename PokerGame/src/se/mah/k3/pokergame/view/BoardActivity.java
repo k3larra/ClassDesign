@@ -2,6 +2,7 @@ package se.mah.k3.pokergame.view;
 
 import se.mah.k3.pokergame.R;
 import se.mah.k3.pokergame.controller.Controller;
+import se.mah.k3.pokergame.media.Effects;
 import se.mah.k3.pokergame.model.Board.Row;
 import android.os.Bundle;
 import android.app.Activity;
@@ -47,6 +48,8 @@ public class BoardActivity extends Activity implements OnClickListener{
 		Log.i("k3larra", "Clicked: "+ v.getId());
 		ImageView iv = (ImageView)v;
 		iv.setPadding(0, 0, 2, 2);
+		Effects.getInstance().init(this);
+		Effects.getInstance().playSound(Effects.SOUND_1);
 	}
 
 	public void newGameClick(View v){

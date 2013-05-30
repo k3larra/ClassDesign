@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="se.mah.k3.pokergametest.TestActivity"
+            android:name="se.mah.k3.pokergametest.TestDeckActivity"
             android:label="@string/title_activity_test" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,6 +35,15 @@
             android:name="se.mah.k3.pokergametest.DragDropTestActivity"
             android:label="@string/title_activity_drag_drop_test" >
             <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="se.mah.k3.pokergametest.TestSoundActivity"
+            android:label="@string/title_activity_test_sound" >
+             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />

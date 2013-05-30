@@ -8,7 +8,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
 
-public class TestActivity extends Activity {
+public class TestDeckActivity extends Activity {
 	private Deck pd;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

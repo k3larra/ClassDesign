@@ -11,7 +11,7 @@ public class Board {
 	private ArrayList<Card> row3 = new ArrayList<Card>();
 	private ArrayList<Card> row4 = new ArrayList<Card>();
 	private Rules rules;
-	//Enums som tillhör board så de kan vara i denna klassen
+	//Enums som tillhör board så de kan vara i denna klassenkkllklk
     public static enum Row {FIRST,SECOND,THIRD,FOURTH};
 
     public Board() {

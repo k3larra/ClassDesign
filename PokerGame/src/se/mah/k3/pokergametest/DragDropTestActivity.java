@@ -3,6 +3,7 @@ package se.mah.k3.pokergametest;
 import se.mah.k3.pokergame.R;
 import se.mah.k3.pokergame.R.layout;
 import se.mah.k3.pokergame.R.menu;
+import se.mah.k3.pokergame.media.Effects;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.ClipData;
@@ -11,6 +12,7 @@ import android.graphics.Color;
 import android.graphics.Point;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.animation.Animation;
@@ -25,10 +27,16 @@ public class DragDropTestActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		Effects e = Effects.getInstance();
+		e.init(this);
+		e.playSound(1);
 		setContentView(R.layout.activity_drag_drop_test);
 	}
 
 	public void animateMe(View v){
+		Effects.getInstance().init(this);
+		Log.i("k3larra","Sound");
+		Effects.getInstance().playSound(Effects.SOUND_1);
 		iv = (ImageView) findViewById(R.id.imageView1);
 		Animation anim = AnimationUtils.loadAnimation(this, R.anim.set_animation);
 		anim1 = AnimationUtils.loadAnimation(this, R.anim.my_translate);
